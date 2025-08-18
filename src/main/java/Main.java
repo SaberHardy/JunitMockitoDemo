@@ -6,11 +6,11 @@ public class Main {
         UserService userService = new UserService();
 
         // Create users
-        // userService.createUser(new User("Alice", "alice@example.com"));
-        // userService.createUser(new User("Bob", "bob@example.com"));
+//         userService.createUser(new User("Alice2", "alice2@example.com"));
+//         userService.createUser(new User("Bob2", "bob2@example.com"));
         // Get all users
-        // System.out.println("All users:");
-        // userService.getAllUsers().forEach(System.out::println);
+//         System.out.println("All users:");
+//         userService.getAllUsers().forEach(System.out::println);
         //
         // Update user
         // User userToUpdate = userService.getUser(1);
