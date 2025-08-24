@@ -1,9 +1,11 @@
+import dao.UserDao;
 import model.User;
 import service.UserService;
 
 public class Main {
     public static void main(String[] args) {
-        UserService userService = new UserService();
+        UserDao userDao = new UserDao();
+        UserService userService = new UserService(userDao);
 
         // Create users
 //         userService.createUser(new User("Alice2", "alice2@example.com"));

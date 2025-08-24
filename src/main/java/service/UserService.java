@@ -7,11 +7,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserService {
-    private final UserDao userDao = new UserDao();
+    private final UserDao userDao;
 
-    public void createUser(User user) {
+    public UserService(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public void createUser(User user) throws SQLException {
         try {
-            userDao.insertUser(user);
+            this.userDao.insertUser(user);
             System.out.println("User created: " + user);
         } catch (SQLException e) {
             System.err.println("Error creating user: " + e.getMessage());
@@ -20,7 +24,7 @@ public class UserService {
 
     public User getUser(int id) {
         try {
-            return userDao.getUser(id);
+            return this.userDao.getUser(id);
         } catch (SQLException e) {
             System.err.println("Error getting user: " + e.getMessage());
             return null;
@@ -29,7 +33,7 @@ public class UserService {
 
     public List<User> getAllUsers() {
         try {
-            return userDao.getAllUsers();
+            return this.userDao.getAllUsers();
         } catch (SQLException e) {
             System.err.println("Error getting users: " + e.getMessage());
             return List.of(); // Return empty list on error
@@ -38,7 +42,7 @@ public class UserService {
 
     public void updateUser(User user) {
         try {
-            if (userDao.updateUser(user)) {
+            if (this.userDao.updateUser(user)) {
                 System.out.println("User updated: " + user);
             } else {
                 System.out.println("User not found");
@@ -50,7 +54,7 @@ public class UserService {
 
     public void deleteUser(int id) {
         try {
-            if (userDao.deleteUser(id)) {
+            if (this.userDao.deleteUser(id)) {
                 System.out.println("User deleted with ID: " + id);
             } else {
                 System.out.println("User not found");
