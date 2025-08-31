@@ -14,6 +14,16 @@ public class Book {
     public Book() {
     }
 
+    public Book(String isbn, String title, String author, String genre, int publishYear, int totalCopies, int availableCopies) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.publishYear = publishYear;
+        this.totalCopies = totalCopies;
+        this.availableCopies = availableCopies;
+    }
+
     public Book(int id, String isbn, String title, String author, String genre, int publishYear, int totalCopies, int availableCopies) {
         this.id = id;
         this.isbn = isbn;
