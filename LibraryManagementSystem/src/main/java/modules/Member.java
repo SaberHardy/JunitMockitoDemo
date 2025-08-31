@@ -76,4 +76,8 @@ public class Member {
     public void setMembershipDate(LocalDate membershipDate) {
         this.membershipDate = membershipDate;
     }
+
+    public Boolean isMembershipActive() {
+        return membershipDate.plusYears(1).isAfter(LocalDate.now());
+    }
 }
