@@ -7,5 +7,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>JunitMockitoDemo</module>
+        <module>LibraryManagementSystem</module>
     </modules>
 </project>
